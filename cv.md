@@ -1,16 +1,18 @@
-# CV
-## Dmitry Khoroshkin
+# Dmitry Khoroshkin
 ### Frontend Developer
-----
-#### Contacts
-----
+
+---
+
+### Contacts
+
  **tel:** +7 (495) 572-9745\
  **e-mail:** d.khoroshkin@gmail.com
-----
-#### About me
-----
+---
+### About me
+
 Quality-focused professional with demonstrated strengths in directing research and development projects, conducting experiments, drawing conclusions and aggregating experimental data. Exhibited acumen in applying strong analytical skills to develop action plans that comprehensively reduced manufacturing costs and increased productivity. Provided internal cohesion to ensure quality and timely project completion. 
-#### Skills
+
+### Skills
 ----
 - HTML5
 - CSS3
@@ -19,12 +21,12 @@ Quality-focused professional with demonstrated strengths in directing research a
 - Git
 - WebStorm
 
-#### Code example (JS)
+### Code example (JS)
 ----
 *Create a function that takes a positive integer and returns the next bigger number that can be formed by rearranging its digits. For example: **2017 ==> 2071***\
 *If the digits can't be rearranged to form a bigger number, return -1*
 
-```
+```javascript
 function nextBigger(n) {
 
     let arr = [...n.toString()];
@@ -60,11 +62,12 @@ function nextBigger(n) {
     }
 }
 ```
-#### Courses
------
+---
+### Courses
+
 - JS, CSS, HTML according to [learnjavascript.ru](https://learn.javascript.ru/)
 
-#### Languages 
------
+### Languages 
+
 - **English**: Upper-intermediate.
 - **Japanese**: JLPT N2
