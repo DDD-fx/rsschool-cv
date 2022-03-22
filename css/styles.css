@@ -39,7 +39,6 @@ a {
 .logo-top{
     display: none;
 }
-
 /*----------------BURGER------------------*/
 .burger{
     display: none;
@@ -113,9 +112,7 @@ a {
         overflow: hidden;       /*убрать скролл боди при активном меню*/
     }
 }
-
 /*----------------------NAME SECTION-------------------------*/
-
 .main-container{
     height: 100%;
     max-width: 1440px;
@@ -263,11 +260,7 @@ summary:hover{
 .code-example{
     font-size: 14px;
 }
-
 /*---------------------FOOTER-------------------------*/
-.footer{
-
-}
 .footer-container{
     display: flex;
     justify-content: space-around;
