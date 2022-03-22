@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+html,
+body{
+    line-height: 1.3;
+    font-size: 16px;
+    color: #232222;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    background: #f1f1f5;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.header-container{
+    background-image: linear-gradient(to right, rgb(190, 222, 243), rgb(137, 196, 198));
+}
+.nav__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav__link {
+    padding: 0 20px;
+    line-height: 60px;
+    font-size: 16px;
+}
+.nav__link:hover {
+    background-color: #0b598d;
+    color: #e8e2e2;
+    padding: 15px 20px;
+    transition: background-color 0.5s ease;
+}
+.logo-top{
+    display: none;
+}
+/*----------------BURGER------------------*/
+.burger{
+    display: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+}
+.burger-line{
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #232222;
+    position: absolute;
+    transition: 0.3s all linear;
+}
+.burger-line-first{
+    top: 10px;
+}
+.burger-line-second, .burger-line-third{
+    top: 50%;
+    transform: translateY(-50%);             /*50% от высоты/толщины линии*/
+}
+.burger-line-fourth{
+    bottom: 10px;
+}
+.burger-active .burger-line-first, .burger-active .burger-line-fourth{
+    opacity: 0;
+}
+.burger-active .burger-line-second{
+    transform: translateY(-50%) rotate(45deg);
+}
+.burger-active .burger-line-third{
+    transform: translateY(-50%) rotate(-45deg);
+}
+@media (max-width: 900px) {
+    .nav{
+        display: none;
+    }
+    .burger{
+        display: block;
+        margin-left: 20px;
+    }
+    .header-container{
+        position: relative;
+    }
+    .logo-top{
+        display: block;
+        position: absolute;
+        height: 40px;
+        top: 5px;
+        right: 10px;
+    }
+    .nav.nav-burger{
+        display: block;
+        position: fixed;
+        width: 100%;
+        top: 50px;
+        bottom: 0;
+        z-index: 3;
+        overflow: auto;         /*скролл при длинном меню*/
+        background-image: linear-gradient(to right, rgb(190, 222, 243), rgb(137, 196, 198));
+    }
+    .nav__list.nav-burger{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .body-burger{
+        overflow: hidden;       /*убрать скролл боди при активном меню*/
+    }
+}
+/*----------------------NAME SECTION-------------------------*/
+.main-container{
+    height: 100%;
+    max-width: 1440px;
+    padding-left: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width: 400px) {
+    .main-container{
+        padding-left: 10px;
+    }
+}
+
+.section-profile{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 0;
+    border-bottom: 15px solid #e8e2e2;
+}
+.section-profile-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.name{
+    position: relative;
+    font-family: "Roboto Slab";
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    padding-bottom: 40px;
+    margin: 0;
+    text-align: center;
+}
+.name::after{
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -70px;
+    width: 140px;
+    height: 2px;
+    background-color: #232222;
+}
+.profession{
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+    text-align: center;
+}
+.section-title{
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+.photo{
+    padding: 0 70px 0 30px;
+}
+.photo-img{
+    min-width: 100px;
+}
+
+@media (max-width: 700px) {
+    .section-profile{
+        padding: 30px 0;
+        flex-direction: column-reverse;
+    }
+    .photo{
+        padding: 20px 0 20px 0;
+    }
+}
+
+/*---------------SECTIONS------------------------*/
+.section{
+    width: calc(50% - 30px);
+    padding: 30px 0;
+    border-bottom: 3px solid #e8e2e2;
+}
+@media (max-width: 700px) {
+    .section {
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .section{
+        padding: 15px 0;
+    }
+    .section:nth-last-child(1){
+        padding: 15px 0 30px 0;
+    }
+}
+.list-item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+.custom-list{
+    position: relative;
+    padding-left: 30px;
+}
+.custom-list::before{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background-color: antiquewhite;
+}
+.svg-icons{
+    height: 25px;
+    width: 25px;
+    padding-right: 10px;
+}
+.list-link{
+    padding-left: 10px;
+    transition: background-color 0.5s ease;
+}
+.custom-link{
+    transition: background-color 0.5s ease;
+}
+.list-link:hover, .custom-link:hover{
+    color: #b3077b;
+}
+summary:hover{
+    cursor: pointer;
+}
+.code-text{
+    font-size: 16px;
+}
+.code-example{
+    font-size: 14px;
+}
+/*---------------------FOOTER-------------------------*/
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #e8e2e2;
+    margin-top: -3px;
+}
+.logo-link{
+    width: 100px;
+    height: 37px;
+}
+@media (max-width: 400px) {
+    .footer-container{
+        font-size: 16px;
+    }
+    .logo-link{
+        width: 75px;
+        height: 25px;
+    }
+}
+/*-------------------SCROLL-------------------*/
+#scrollBtn{
+    position: fixed;
+    bottom: 80px;
+    right: 50px;
+    z-index: -1;
+    width: 40px;
+    opacity: 0;
+    transition: 0.5s all ease-in;
+}
+#scrollBtn.show-btn{
+    width: 40px;
+    opacity: 40%;
+    z-index: 2;
+}
+#scrollBtn.show-btn:hover{
+    cursor: pointer;
+}

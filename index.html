@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github.min.css">
+    <link rel="icon" href="favicon.ico">
+    <title>CV</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="burger">
+                <span class="burger-line burger-line-first"></span>
+                <span class="burger-line burger-line-second"></span>
+                <span class="burger-line burger-line-third"></span>
+                <span class="burger-line burger-line-fourth"></span>
+            </div>
+            <a href="https://rs.school/js/"><img class="logo-top" src="img/logo-top.svg" alt="logo"></a>
+
+            <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#profile" class="nav__link">Profile</a></li>
+                <li class="nav__item"><a href="#contacts" class="nav__link">Contacts</a></li>
+                <li class="nav__item"><a href="#summary" class="nav__link">Summary</a></li>
+                <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                <li class="nav__item"><a href="#code" class="nav__link">Code</a></li>
+                <li class="nav__item"><a href="#courses" class="nav__link">Courses</a></li>
+                <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                <li class="nav__item"><a href="#education" class="nav__link">Education</a></li>
+                <li class="nav__item"><a href="#languages" class="nav__link">Languages</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="main-container">
+            <img id="scrollBtn" src="img/scroll_btn.svg" alt="scroll">
+            <section class="section-profile" id="profile">
+                <div class="section-profile-title">
+                    <h1 class="name">Dmitry Khoroshkin</h1>
+                    <h2 class="profession">front-end web developer</h2>
+                </div>
+                <div class="photo">
+                    <img class="photo-img" src="img/photo.png" alt="photo">
+                </div>
+            </section>
+            <section class="section" id="contacts">
+                <h2 class="section-title">contacts</h2>
+                <ul class="list">
+                    <li class="list-item">
+                        <svg class="svg-icons"><use xlink:href="img/icons.svg#email"></use></svg>
+                        <b>e-mail:  </b>
+                        <a class="list-link" href="mailto:d.khoroshkin@gmail.com" title="e-mail">d.khoroshkin@gmail.com</a>
+                    </li>
+                    <li class="list-item">
+                        <svg class="svg-icons"><use xlink:href="img/icons.svg#github"></use></svg>
+                        <b>GitHub:  </b>
+                        <a class="list-link" href="https://github.com/DDD-fx" title="GitHub">DDD-fx</a>
+                    </li>
+                    <li class="list-item">
+                        <svg class="svg-icons"><use xlink:href="img/icons.svg#telegram"></use></svg>
+                        <b>Telegram:  </b>
+                        <a class="list-link" href="https://t.me/vortex_tube" title="Telegram">@vortex_tube</a>
+                    </li>
+                    <li class="list-item">
+                        <svg class="svg-icons"><use xlink:href="img/icons.svg#discord"></use></svg>
+                        <b>Discord:  </b>
+                        <a class="list-link" href="https://discord.com/invite/zUr7wWYPXE" title="Discord">DFX#4499</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="section" id="summary">
+                <h2 class="section-title">summary</h2>
+                <p>Quality-focused professional with demonstrated strengths in directing
+                   research and development projects, conducting experiments, drawing conclusions and aggregating experimental data. Decided to change my career form chemical technology to IT.
+                    Planning to study Angular</p>
+            </section>
+            <section class="section" id="skills">
+                <h2 class="section-title">skills</h2>
+                <ul class="list">
+                    <li class="list-item custom-list">HTML5</li>
+                    <li class="list-item custom-list">CSS3</li>
+                    <li class="list-item custom-list">JavaScript</li>
+                    <li class="list-item custom-list">Figma</li>
+                    <li class="list-item custom-list">Git</li>
+                    <li class="list-item custom-list">WebStorm</li>
+                </ul>
+            </section>
+            <section class="section" id="code">
+                <h2 class="section-title">code</h2>
+                <p class="code-text"><i>Create a function that takes a positive integer and returns the next bigger
+                                number that
+                       can be
+                formed by rearranging its digits. For example: <b>2017 ==> 2071</b><br>
+                If the digits can't be rearranged to form a bigger number, return -1</i></p>
+                <details><summary>Show code</summary>
+
+                <pre class="code-example">
+                    <code class="language-js">function nextBigger(n) {
+
+let arr = [...n.toString()];
+
+if (arr.join("") === maxToMin(arr)) return -1;
+else if (arr[arr.length - 1] > arr[arr.length - 2]) return reverseLastDigits(arr)
+
+function reverseLastDigits(arr) {
+    return Number(arr.slice(0, arr.length - 2).concat(arr.slice(-2).reverse()).join(""));
+}
+function maxToMin(arr) {
+    return arr.slice().sort((a, b) => b - a).join("")
+}
+function minToMax(arr) {
+    return arr.slice().sort((a, b) => a - b)
+}
+for (let i = 3; i &lt;= arr.length;) {
+    let subarr = arr.slice(-i);
+
+    if (subarr.join("") === maxToMin(subarr)) i++;
+    else {
+        let numToChange = subarr[0];
+        let nextBiggerNum = subarr.slice(1).filter(el => el > numToChange).sort()[0];
+        let nextBiggerNumIndex = subarr.indexOf(nextBiggerNum, 1);
+        subarr[0] = nextBiggerNum;
+        subarr[nextBiggerNumIndex] = numToChange;
+        subarr = [subarr[0]].concat(minToMax(subarr.slice(1)));
+        return Number(arr.slice(0, -i).concat(subarr).join(""))
+    }
+}
+}</code>
+                </pre>
+                </details>
+            </section>
+            <section class="section" id="courses">
+                <h2 class="section-title">courses</h2>
+                <ul class="list">
+                    <li class="list-item custom-list"><a class="custom-link"
+                     href="https://learn.javascript.ru/about">Javascript.ru</a></li>
+                </ul>
+            </section>
+            <section class="section" id="projects">
+                <h2 class="section-title">projects</h2>
+                <ul class="list">
+                    <li class="list-item custom-list">
+                        <a class="custom-link" href="https://DDD-fx.github.io/rsschool-cv/cv">RSS-CV</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="section" id="education">
+                <h2 class="section-title">education</h2>
+                South Russian State Technical University
+            </section>
+            <section class="section" id="languages">
+                <h2 class="section-title">languages</h2>
+                <b>English:</b> &nbsp;&nbsp;&nbsp;B2 (Upper-Intermediate)<br>
+                <b>Japanese:</b> &nbsp;&nbsp;&nbsp;JLPT N2
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <a class="list-link" href="https://github.com/DDD-fx" title="GitHub">© DDD-fx</a>
+            2022
+            <a href="https://rs.school/js/"><img class="logo-link" src="img/rss-logo.svg" alt="logo"></a>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
