@@ -1,1 +1,1 @@
-https://DDD-fx.github.io/rsschool-cv/cv
+https://DDD-fx.github.io/rsschool-cv/
