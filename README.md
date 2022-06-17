@@ -1,1 +1,1 @@
-# rsschool-cv
+https://DDD-fx.github.io/rsschool-cv/
